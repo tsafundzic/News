@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/articleImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/item_margin"/>
+
+        <TextView
+                android:id="@+id/articleAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/item_margin"
+                android:layout_below="@id/articlePublishedAt"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                tools:text="author"/>
+
+        <TextView
+                android:id="@+id/articlePublishedAt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/articleImage"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/item_margin"
+                android:layout_alignParentRight="true"
+                tools:text="date"/>
+
+        <TextView
+                android:id="@+id/articleTitle"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/item_margin"
+                android:layout_below="@id/articleAuthor"
+                android:textSize="@dimen/title"
+                android:layout_height="wrap_content"
+                tools:text="title news"/>
+
+
+
+        <TextView
+                android:id="@+id/articleDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/articleTitle"
+                android:layout_margin="@dimen/item_margin"
+                tools:text="dfaskdfnlsdjfsljflksaf"/>
+
+        <Button
+                android:id="@+id/articleLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/read_more"
+                android:layout_margin="@dimen/item_margin"
+                android:layout_below="@id/articleDetails"
+        />
+
+
+    </RelativeLayout>
+</ScrollView>
