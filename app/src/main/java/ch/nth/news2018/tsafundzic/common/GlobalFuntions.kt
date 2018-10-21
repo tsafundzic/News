@@ -4,6 +4,8 @@ import android.content.Context
 import android.text.format.DateUtils
 import android.widget.Toast
 import java.text.SimpleDateFormat
+import java.util.*
+
 
 fun Context.toast(message: String, duration: Int = Toast.LENGTH_SHORT) = Toast.makeText(this, message, duration).show()
 
@@ -22,5 +24,17 @@ fun returnTimeAgo(time: String): String {
     val ago = DateUtils.getRelativeTimeSpanString(articleTime, now, DateUtils.MINUTE_IN_MILLIS).toString()
 
     val agoSplitted = ago.trim().split(" ")
-    return (agoSplitted[0] + " " + agoSplitted[1].substring(0, 1))
+    var timeToShow = (agoSplitted[0] + " " + agoSplitted[1].substring(0, 1))
+
+    val language = Locale.getDefault().language
+
+    if (language == "hr") {
+        timeToShow = if (agoSplitted[2].substring(0, 1) == "s") {
+            agoSplitted[1] + " h"
+        } else {
+            agoSplitted[1] + " " + agoSplitted[2].substring(0, 1)
+        }
+    }
+
+    return timeToShow
 }
