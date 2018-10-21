@@ -19,10 +19,13 @@ class MainPresenterImpl(private val articleInteractor: ArticleInteractor) : Main
 
     override fun onArticlesError() {
         view.showArticleError()
-   }
+    }
 
     override fun getArticles() {
         articleInteractor.getArticles(this)
     }
 
+    override fun getTopArticles() {
+        articleInteractor.getTopArticles(this)
+    }
 }

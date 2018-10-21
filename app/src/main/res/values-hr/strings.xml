@@ -2,4 +2,7 @@
     <string name="app_name">Novosti</string>
     <string name="read_more">Pročitaj više</string>
     <string name="no_data">Nema podataka</string>
+    <string name="normalNews">Normalno</string>
+    <string name="topHeadlines">Popularno</string>
+
 </resources>

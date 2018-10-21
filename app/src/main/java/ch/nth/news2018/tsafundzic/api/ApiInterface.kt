@@ -7,5 +7,8 @@ import retrofit2.http.Query
 
 interface ApiInterface {
     @GET("v2/everything")
-    fun getArticles(@Query("sources") sources: String, @Query("apiKey") apiKey: String): Call<ArticlesResponse>
+    fun getArticles(@Query("sources") sources: String, @Query("sortBy") sortBy: String, @Query("apiKey") apiKey: String): Call<ArticlesResponse>
+
+    @GET("v2/top-headlines")
+    fun getTopArticles(@Query("sources") sources: String, @Query("sortBy") sortBy: String, @Query("apiKey") apiKey: String): Call<ArticlesResponse>
 }

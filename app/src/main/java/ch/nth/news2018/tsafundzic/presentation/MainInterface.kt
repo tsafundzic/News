@@ -18,6 +18,8 @@ interface MainInterface{
 
         fun getArticles()
 
+        fun getTopArticles()
+
     }
 
 }

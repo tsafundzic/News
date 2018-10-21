@@ -12,4 +12,6 @@ interface ArticleInteractor {
     }
 
     fun getArticles(responseInterface: ResponseInterface<List<Article>>)
+
+    fun getTopArticles(responseInterface: ResponseInterface<List<Article>>)
 }

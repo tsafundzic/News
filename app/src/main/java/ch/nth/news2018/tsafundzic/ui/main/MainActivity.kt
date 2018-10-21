@@ -13,48 +13,19 @@ import ch.nth.news2018.tsafundzic.ui.articles.ArticleAdapter
 import ch.nth.news2018.tsafundzic.ui.details.ArticleDetails
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), MainInterface.View, OnArticleClickListener {
-
-    private val presenter by lazy { mainPresenter() }
-    private val adapter by lazy { ArticleAdapter(this) }
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        presenter.setView(this)
 
-        setAdapter()
-        presenter.getArticles()
+        val fragmentAdapter = PagerAdapter(supportFragmentManager, this)
+        viewpager_main.adapter = fragmentAdapter
 
-    }
+        tabs_main.setupWithViewPager(viewpager_main)
 
-    private fun setAdapter() {
-        articlesList.layoutManager = LinearLayoutManager(this)
-        articlesList.adapter = adapter
-    }
-
-    override fun showArticles(articles: List<Article>) {
-        adapter.setArticles(articles)
-    }
-
-    override fun showArticleError() {
-        toast(getString(R.string.no_data))
-    }
-
-    override fun onArticleClick(article: Article) {
-        startActivity(
-            ArticleDetails.getLaunchIntent(
-                this,
-                article.title,
-                article.author,
-                article.description,
-                article.publishedAt,
-                article.urlToImage,
-                article.url
-            )
-        )
     }
 
 }
