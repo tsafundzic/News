@@ -51,5 +51,7 @@ class ArticleDetails : AppCompatActivity() {
         articleTitle.text = intent.getStringExtra(TITLE)
         articleDetails.text = intent.getStringExtra(DESCRIPTION)
         Glide.with(this).load(intent.getStringExtra(URLTOIMAGE)).into(articleImage)
+
+        articlePublishedAt.text = returnTimeAgo(intent.getStringExtra(PUBLISHEDAT))
     }
 }
